@@ -139,3 +139,5 @@ The Online Bookstore API follows a layered architecture to ensure scalability, m
 *   User Entity is not included in the app, a user Id is just simulated to associate the cart and the checkout with a user.
 
 *   The payment integration is not implemented, the payment is just simulated to be successful.
+
+*   The database is  preload your database with 10 books inventory that run once when you run the application.
