@@ -62,7 +62,7 @@ This is a Spring Boot-based REST API for an online bookstore. It allows users to
 
 ```
 git clone https://github.com/usman1607/OnlineBookStore.git
-cd online-bookstore
+cd OnlineBookStore
 ```
 
 ### Configure database settings in application.properties:
@@ -87,3 +87,37 @@ mvn spring-boot:run
 ```
 mvn test
 ```
+
+## Testing the APIs
+
+### Swagger UI is configured on the application
+
+When you run the application, you can access the swagger ui on the default port: 8080 with the below url
+
+```
+http://localhost:8080/swagger-ui/index.html#/
+```
+
+
+
+# High-Level Design Overview
+The Online Bookstore API follows a layered architecture to ensure scalability, maintainability, and modularity. The primary layers are:
+
+*   Controller Layer (Handles API requests)
+*   Service Layer (Business logic implementation)
+*   Repository Layer (Data access using Spring Data JPA)
+*   Database (PostgreSQL for storing data)
+
+## Component Relationships
+*   Users interact with the system via REST API.
+*   BookController: Fetches book data from BookService, which retrieves information from BookRepository.
+*   CartController: Manages user carts and interacts with CartService and CartRepository.
+*   CheckoutController: Processes payments through different ICheckoutService implementations (Web, USSD, Transfer).
+*   PurchaseHistoryController: Fetches past orders linked to a user.
+
+## Scalability & Fault Tolerance
+*   Load Balancing: The system can be horizontally scaled by running multiple instances behind a load balancer.
+*   Database Optimization: Using indexing and optimized queries for fast retrieval.
+*   Microservices Expansion: Checkout, Book Management, and Cart services can be separated into microservices in the future.
+
+## Additional Notes:
