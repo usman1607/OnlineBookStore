@@ -2,7 +2,7 @@ package com.usman.onlinebookstore.controllers;
 
 import org.springframework.web.bind.annotation.*;
 
-import com.usman.onlinebookstore.models.entities.Checkout;
+import com.usman.onlinebookstore.models.dtos.CheckoutDto;
 import com.usman.onlinebookstore.services.implementations.PurchaseHistoryServiceImpl;
 
 import java.util.List;
@@ -17,7 +17,7 @@ public class PurchaseHistoryController {
     }
     
     @GetMapping("/{userId}")
-    public List<Checkout> getPurchaseHistory(@PathVariable String userId) {
+    public List<CheckoutDto> getPurchaseHistory(@PathVariable String userId) {
         return purchaseHistoryService.getPurchaseHistoryByUser(userId);
     }
 }

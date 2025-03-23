@@ -1,8 +1,8 @@
 package com.usman.onlinebookstore.services.interfaces;
 
-import com.usman.onlinebookstore.models.entities.Cart;
+import com.usman.onlinebookstore.models.dtos.CartDto;
 
 public interface ICartService {
-    Cart addToCart(String userId, Long bookId, int quantity);
-    Cart viewCart(Long cartId);
+    CartDto addToCart(String userId, Long bookId, int quantity);
+    CartDto viewCart(Long cartId);
 } 

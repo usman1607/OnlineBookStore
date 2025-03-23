@@ -31,6 +31,8 @@ public class Checkout {
     @OneToMany(mappedBy = "checkout", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CartItem> purchasedItems = new ArrayList<>();
 
+    public Checkout(){}
+
     public Checkout(String userId) {
         this.userId = userId;
     }
@@ -46,4 +48,8 @@ public class Checkout {
     public void setItems(List<CartItem> items) { this.purchasedItems = items; }
     public double getTotalAmount(){ return totalAmount; }
     public void setTotalAmount(double amount) { this.totalAmount = amount; }
+
+    public void addItems(CartItem item){
+        this.purchasedItems.add(item);
+    }
 }

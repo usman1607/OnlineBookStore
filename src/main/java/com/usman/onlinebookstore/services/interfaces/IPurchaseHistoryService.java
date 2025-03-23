@@ -1,9 +1,10 @@
 package com.usman.onlinebookstore.services.interfaces;
 
+import com.usman.onlinebookstore.models.dtos.CheckoutDto;
 import com.usman.onlinebookstore.models.entities.Checkout;
 
 import java.util.List;
 
 public interface IPurchaseHistoryService {
-    List<Checkout> getPurchaseHistoryByUser(String userId);
+    List<CheckoutDto> getPurchaseHistoryByUser(String userId);
 }

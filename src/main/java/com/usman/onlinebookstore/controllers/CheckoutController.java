@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.usman.onlinebookstore.enums.PaymentMethod;
-import com.usman.onlinebookstore.models.entities.Checkout;
+import com.usman.onlinebookstore.models.dtos.CheckoutDto;
 import com.usman.onlinebookstore.services.CheckoutServiceFactory;
 import com.usman.onlinebookstore.services.interfaces.ICheckoutService;
 
@@ -20,7 +20,7 @@ public class CheckoutController {
     }
 
     @PostMapping("/process")
-    public Checkout processCheckout(@RequestParam Long cartId, @RequestParam PaymentMethod paymentMethod) {
+    public CheckoutDto processCheckout(@RequestParam Long cartId, @RequestParam PaymentMethod paymentMethod) {
         ICheckoutService service = checkoutServiceFactory.getCheckoutService(paymentMethod);
         return service.processCheckout(cartId);
     }

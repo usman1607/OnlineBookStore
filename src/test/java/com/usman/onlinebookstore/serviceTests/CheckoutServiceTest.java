@@ -15,6 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Optional;
 
 import com.usman.onlinebookstore.enums.PaymentMethod;
+import com.usman.onlinebookstore.models.dtos.CheckoutDto;
 import com.usman.onlinebookstore.models.entities.Book;
 import com.usman.onlinebookstore.models.entities.Cart;
 import com.usman.onlinebookstore.models.entities.CartItem;
@@ -60,9 +61,9 @@ public class CheckoutServiceTest {
     @Test
     void testProcessCheckout() {
         when(cartRepository.findById(1L)).thenReturn(Optional.of(cart));
-        when(createCheckout.create(cart, PaymentMethod.TRANSFER)).thenReturn(new Checkout("TestUser"));
+        when(createCheckout.create(cart, PaymentMethod.TRANSFER)).thenReturn(new CheckoutDto());
 
-        Checkout result = transferCheckoutService.processCheckout(1L);
+        CheckoutDto result = transferCheckoutService.processCheckout(1L);
         assertNotNull(result);
     }
 

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.usman.onlinebookstore.enums.PaymentMethod;
+import com.usman.onlinebookstore.models.dtos.CheckoutDto;
 import com.usman.onlinebookstore.models.entities.Cart;
 import com.usman.onlinebookstore.models.entities.Checkout;
 import com.usman.onlinebookstore.repositories.CartRepository;
@@ -21,7 +22,7 @@ public class TransferCheckoutService implements ICheckoutService {
     }
 
     @Override
-    public Checkout processCheckout(Long cartId) {
+    public CheckoutDto processCheckout(Long cartId) {
         Cart cart = cartRepository.findById(cartId).orElseThrow(() -> new RuntimeException("Cart not found"));
 
         if (cart.getItems().isEmpty()) {

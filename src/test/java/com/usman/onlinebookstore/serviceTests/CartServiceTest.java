@@ -11,6 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.usman.onlinebookstore.models.dtos.CartDto;
 import com.usman.onlinebookstore.models.entities.Book;
 import com.usman.onlinebookstore.models.entities.Cart;
 import com.usman.onlinebookstore.repositories.BookRepository;
@@ -30,6 +31,7 @@ public class CartServiceTest {
 
     private Cart cart;
     private Book book;
+    private CartDto cartDto;
 
     @BeforeEach
     void setUp() {
@@ -46,15 +48,15 @@ public class CartServiceTest {
         when(cartRepository.findByUserId("TestUser")).thenReturn(cart);
         when(bookRepository.findById(1L)).thenReturn(Optional.of(book));
 
-        cartService.addToCart("TestUser", 1L, 2);
-        assertEquals(1, cart.getItems().size());
+        CartDto dto = cartService.addToCart("TestUser", 1L, 2);
+        assertEquals("TestUser", dto.getUserId());
         assertEquals(2, cart.getItems().get(0).getQuantity());
     }
 
     @Test
     void testViewCart() {
         when(cartRepository.findById(1L)).thenReturn(Optional.of(cart));
-        Cart retrievedCart = cartService.viewCart(1L);
+        CartDto retrievedCart = cartService.viewCart(1L);
         assertTrue(retrievedCart != null);
         assertEquals("TestUser", retrievedCart.getUserId());
         assertEquals(1L, retrievedCart.getId());

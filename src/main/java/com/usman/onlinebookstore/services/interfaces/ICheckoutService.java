@@ -1,7 +1,7 @@
 package com.usman.onlinebookstore.services.interfaces;
 
-import com.usman.onlinebookstore.models.entities.Checkout;
+import com.usman.onlinebookstore.models.dtos.CheckoutDto;
 
 public interface ICheckoutService {
-    Checkout processCheckout(Long cartId);
+    CheckoutDto processCheckout(Long cartId);
 }

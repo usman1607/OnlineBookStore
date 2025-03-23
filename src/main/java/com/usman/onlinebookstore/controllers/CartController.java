@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.usman.onlinebookstore.models.dtos.CartDto;
 import com.usman.onlinebookstore.models.entities.Cart;
 import com.usman.onlinebookstore.services.implementations.CartServiceImpl;
 
@@ -20,12 +21,12 @@ public class CartController {
     }
 
     @PostMapping("/add")
-    public Cart addToCart(@RequestParam String userId, @RequestParam Long bookId, @RequestParam int quantity) {
+    public CartDto addToCart(@RequestParam String userId, @RequestParam Long bookId, @RequestParam int quantity) {
         return cartService.addToCart(userId, bookId, quantity);
     }
 
     @GetMapping("/{cartId}")
-    public Cart viewCart(@PathVariable Long cartId) {
+    public CartDto viewCart(@PathVariable Long cartId) {
         return cartService.viewCart(cartId);
     }
 }
