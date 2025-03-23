@@ -60,22 +60,30 @@ This is a Spring Boot-based REST API for an online bookstore. It allows users to
 
 ### Clone the repository:
 
+```
 git clone https://github.com/usman1607/OnlineBookStore.git
 cd online-bookstore
+```
 
 ### Configure database settings in application.properties:
 
 *   Create your local database and input your spring.datasource.url, spring.datasource.username and spring.datasource.password in the application.properties file.
 
+```
 spring.datasource.url=jdbc:postgresql://localhost:5432/bookstore
 spring.datasource.username=your_db_user
 spring.datasource.password=your_db_password
+```
 
 ### Build and run the project:
 
+```
 mvn clean install
 mvn spring-boot:run
+```
 
 ### Run the tests:
 
+```
 mvn test
+```
