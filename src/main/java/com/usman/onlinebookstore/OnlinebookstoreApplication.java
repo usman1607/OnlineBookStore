@@ -18,12 +18,6 @@ import com.usman.onlinebookstore.repositories.BookRepository;
 @ConfigurationPropertiesScan
 public class OnlinebookstoreApplication {
 
-    private final BookRepository bookRepository;
-
-    OnlinebookstoreApplication(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
-
 	public static void main(String[] args) {
 		SpringApplication.run(OnlinebookstoreApplication.class, args);
 	}

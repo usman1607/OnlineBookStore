@@ -19,7 +19,6 @@ import com.usman.onlinebookstore.models.dtos.CheckoutDto;
 import com.usman.onlinebookstore.models.entities.Book;
 import com.usman.onlinebookstore.models.entities.Cart;
 import com.usman.onlinebookstore.models.entities.CartItem;
-import com.usman.onlinebookstore.models.entities.Checkout;
 import com.usman.onlinebookstore.repositories.CartItemRepository;
 import com.usman.onlinebookstore.repositories.CartRepository;
 import com.usman.onlinebookstore.repositories.CheckoutRepository;

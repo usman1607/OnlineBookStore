@@ -6,25 +6,21 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.usman.onlinebookstore.enums.PaymentMethod;
-import com.usman.onlinebookstore.models.dtos.CartDto;
 import com.usman.onlinebookstore.models.dtos.CartItemDto;
 import com.usman.onlinebookstore.models.dtos.CheckoutDto;
 import com.usman.onlinebookstore.models.entities.Cart;
 import com.usman.onlinebookstore.models.entities.CartItem;
 import com.usman.onlinebookstore.models.entities.Checkout;
-import com.usman.onlinebookstore.repositories.CartItemRepository;
 import com.usman.onlinebookstore.repositories.CartRepository;
 import com.usman.onlinebookstore.repositories.CheckoutRepository;
 
 
 @Service
 public class CreateCheckout {
-    private final CartItemRepository cartItemRepository;
     private final CheckoutRepository checkoutRepository;
     private final CartRepository cartRepository;
 
-    public CreateCheckout(CheckoutRepository checkoutRepository, CartRepository cartRepository, CartItemRepository cartItemRepository) {
-        this.cartItemRepository = cartItemRepository;
+    public CreateCheckout(CheckoutRepository checkoutRepository, CartRepository cartRepository) {
         this.checkoutRepository = checkoutRepository;
         this.cartRepository = cartRepository;
     }

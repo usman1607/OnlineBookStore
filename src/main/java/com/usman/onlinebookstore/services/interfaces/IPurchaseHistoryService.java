@@ -1,7 +1,6 @@
 package com.usman.onlinebookstore.services.interfaces;
 
 import com.usman.onlinebookstore.models.dtos.CheckoutDto;
-import com.usman.onlinebookstore.models.entities.Checkout;
 
 import java.util.List;
 

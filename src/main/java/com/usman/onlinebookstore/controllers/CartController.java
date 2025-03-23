@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.usman.onlinebookstore.models.dtos.CartDto;
-import com.usman.onlinebookstore.models.entities.Cart;
 import com.usman.onlinebookstore.services.implementations.CartServiceImpl;
 
 @RestController

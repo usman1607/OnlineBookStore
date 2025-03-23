@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import com.usman.onlinebookstore.enums.PaymentMethod;
 import com.usman.onlinebookstore.models.dtos.CheckoutDto;
 import com.usman.onlinebookstore.models.entities.Cart;
-import com.usman.onlinebookstore.models.entities.Checkout;
 import com.usman.onlinebookstore.repositories.CartRepository;
 import com.usman.onlinebookstore.services.interfaces.ICheckoutService;
 

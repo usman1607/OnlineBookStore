@@ -31,7 +31,6 @@ public class CartServiceTest {
 
     private Cart cart;
     private Book book;
-    private CartDto cartDto;
 
     @BeforeEach
     void setUp() {
